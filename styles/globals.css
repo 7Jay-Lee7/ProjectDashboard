@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-700
+}
+
+img{
+  max-height: 100%;
+}
+input, textarea, select{
+  @apply border border-gray-200 rounded-sm w-full py-2 px-3;
+  @apply mb-2;
+}
+input:focus, textarea:focus, select:focus{
+  @apply border-blue-900;
+}
+.btn-primary{
+  @apply bg-gray-800 text-white px-4 py-1 rounded-sm shadow-sm;
+}
+table.basic{
+  @apply w-full bg-gray-800 text-white rounded-sm shadow-md;
+}
+table.basic thead tr td,
+table.basic thead tr th
+{
+  @apply text-sm text-gray-400 uppercase font-semibold border-b border-gray-200 px-4 py-2;
+}
+table.basic tr td{
+  @apply px-4 py-1;
+}
+table.basic a{
+  @apply px-4 rounded-sm inline-flex mx-1 items-center gap-1 text-sm py-1;
+}
+.btn-default, .btn-red{
+  @apply px-4 py-1 rounded-md;
+}
+.btn-red{
+  @apply bg-red-200 text-red-600 px-4 py-1 rounded-sm shadow-sm;
+}
+.btn-default{
+  @apply bg-gray-800 text-white px-4 py-1 rounded-sm shadow-sm;
+}
+
+/* Login button */
+.login-button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .login-button:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-login-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing-login-button {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .login-button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+/* Bell */
+@keyframes sway {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+/* Apply the animation on hover */
+.Popover.Button:hover img {
+  animation: sway 2s ease-in-out forwards;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+/* Add delay after hover */
+.Popover.Button:hover img:hover {
+  animation-delay: 1s;
+}
+
+/* Apply initial rotation to the bell icon */
+.bell-icon {
+  transform: rotate(-10deg);
+}
+
+/* Apply translation on hover */
+.bell-icon:hover {
+  transform: translateX(-2px);
+}
+
+
+
+/* Push & Email toggle */
+.toggle-checkbox:checked {
+  background-color: #0a5208; /* Change to the desired color when checked */
+}
+
+.toggle-checkbox:not(:checked) {
+  background-color: #560000; /* Change to the desired color when unchecked */
+}
+
+/*Message button*/
+.push {
+  font-size: 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(230, 0, 0),
+    #ffedbca8
+  );
+  box-shadow: -20px 0px 30px rgba(0, 0, 0, 0.2),
+    6px 20px 25px rgba(0, 0, 0, 0.2);
+  transition: 0.13s ease-in-out;
+}
+
+.push:hover {
+  box-shadow: -5px -5px 15px rgb(139, 1, 1),
+    5px 5px 15px rgb(211, 2, 2),
+    inset 5px 5px 10px rgb(189, 27, 27),
+    inset -5px -5px 10px rgb(223, 4, 4);
+  font-size: 24px;
+  transition: 500ms;
+  color: rgb(250, 250, 250);
+  text-shadow: 0 0 7px rgb(250, 250, 250),
+  0 0 10px rgb(250, 250, 250),
+  0 0 21px rgb(250, 250, 250),
+  0 0 42px rgb(207, 204, 204),
+  0 0 82px rgb(207, 204, 204);
+}
+
+.push:active {
+	background-image: linear-gradient(to right bottom, rgb(230, 0, 0), #ffedbca8);
+}
+
+#displayMessage {
+  font-size: 24px;
+}
